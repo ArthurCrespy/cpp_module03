@@ -18,8 +18,8 @@
 class ClapTrap
 {
 	private:
-		std::string _name;
-		int         _hit_points;
+		std::string	_name;
+		int			_hit_points;
 		int         _energy_points;
 		int         _attack_damage;
 
@@ -31,19 +31,19 @@ class ClapTrap
 
 		ClapTrap &operator=(ClapTrap const &rhs);
 
-		void attack(std::string const & target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void		attack(std::string const & target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
 
-		std::string getName(void) const;
-		int getHitPoints(void) const;
-		int getEnergyPoints(void) const;
-		int getAttackDamage(void) const;
+		std::string	getName(void) const;
+		int			getHitPoints(void) const;
+		int			getEnergyPoints(void) const;
+		int			getAttackDamage(void) const;
 
-		void setName(std::string name);
-		void setHitPoints(int hit_points);
-		void setEnergyPoints(int energy_points);
-		void setAttackDamage(int attack_damage);
+		void		setName(std::string name);
+		void		setHitPoints(int hit_points);
+		void		setEnergyPoints(int energy_points);
+		void		setAttackDamage(int attack_damage);
 };
 
 #endif

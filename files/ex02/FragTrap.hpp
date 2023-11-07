@@ -17,8 +17,6 @@
 
 class FragTrap : public ClapTrap
 {
-	private:
-
 	public:
 		FragTrap(void);
 		FragTrap(std::string name);
@@ -28,7 +26,6 @@ class FragTrap : public ClapTrap
 		FragTrap &operator=(FragTrap const &rhs);
 
 		void highFivesGuys(void);
-
 };
 
 

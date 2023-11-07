@@ -20,6 +20,7 @@ class ScavTrap : public ClapTrap
 {
 	private:
 		bool _guardGate;
+
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string name);

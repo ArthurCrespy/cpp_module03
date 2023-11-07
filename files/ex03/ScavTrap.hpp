@@ -36,5 +36,4 @@ class ScavTrap : virtual public ClapTrap
 		bool getGuardGate(void) const;
 };
 
-
 #endif
