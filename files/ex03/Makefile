@@ -23,7 +23,7 @@ OBJ_DIR     := .objs
 OBJS 		:= ${SRCS:%.cpp=${OBJ_DIR}/%.o}
 
 CC          := c++
-CFLAGS      := -Wall -Wextra -Werror -g
+CFLAGS      := -Wall -Wextra -Werror -Wshadow -Wno-shadow -g
 CPPFLAGS	:= -std=c++98 -pedantic
 
 RM          := rm -rf

@@ -28,7 +28,10 @@ FragTrap::FragTrap(FragTrap const &src)
 	*this = src;
 }
 
-FragTrap::~FragTrap() {}
+FragTrap::~FragTrap()
+{
+	std::cout << "FragTrap destructor called" << std::endl;
+}
 
 FragTrap &FragTrap::operator=(FragTrap const &rhs)
 {

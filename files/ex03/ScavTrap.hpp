@@ -32,7 +32,6 @@ class ScavTrap : virtual public ClapTrap
 		void guardGate(void);
 
 		void setGuardGate(bool guardGate);
-
 		bool getGuardGate(void) const;
 };
 

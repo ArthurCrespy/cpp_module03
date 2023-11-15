@@ -18,7 +18,16 @@ int main(void)
 	ClapTrap clap2("1");
 
 	clap.attack("1");
-	clap2.takeDamage(5);
-	clap2.beRepaired(5);
+	clap.beRepaired(5);
+
+	clap2.takeDamage(9);
+	for (int i = 0; i < 10; i++)
+		clap2.beRepaired(1);
+	clap2.takeDamage(2);
+	clap2.beRepaired(1);
+	clap2.beRepaired(1);
+	clap2.takeDamage(42);
+	clap2.beRepaired(42);
+
 	return (0);
 }

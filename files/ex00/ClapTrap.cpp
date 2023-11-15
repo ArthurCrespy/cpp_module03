@@ -28,7 +28,10 @@ ClapTrap::ClapTrap(ClapTrap const &src)
 	*this = src;
 }
 
-ClapTrap::~ClapTrap() {}
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap destructor called" << std::endl;
+}
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
 {
@@ -45,31 +48,45 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
 
 void ClapTrap::attack(std::string const &target)
 {
-	if (this->_energy_points < this->_attack_damage)
+	if (this->_hit_points <= 0)
+		std::cout << "ClapTrap " << this->_name << " is already dead!" << std::endl;
+	else if (this->_energy_points <= 0)
 		std::cout << "ClapTrap " << this->_name << " need more energy points to attack!" << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << this->_name << " attack " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
-		this->_energy_points -= this->_attack_damage;
+		this->_energy_points--;
 	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage!" << std::endl;
-	this->_hit_points -= amount;
+	if (this->_hit_points <= 0)
+		std::cout << "ClapTrap " << this->_name << " is already dead!" << std::endl;
+	else if ((this->_hit_points - (int) amount) <= 0)
+	{
+		std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage! He is dead!" << std::endl;
+		this->_hit_points = 0;
+	}
+	else
+	{
+		std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage!" << std::endl;
+		this->_hit_points -= amount;
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_energy_points < (int) amount)
+	if (this->_hit_points <= 0)
+		std::cout << "ClapTrap " << this->_name << " is already dead!" << std::endl;
+	else if (this->_energy_points <= 0)
 		std::cout << "ClapTrap " << this->_name << " need more energy points to be healed of " << amount << " points of damage! " << std::endl;
-	else if (this->_hit_points + (int) amount > 10)
+	else if ((this->_hit_points + (int) amount) > 10)
 		std::cout << "ClapTrap " << this->_name << " has too much health points to be healed of " << amount << " points of damage! " << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << this->_name << " is healed of " << amount << " points of damage!" << std::endl;
 		this->_hit_points += amount;
-		this->_energy_points -= amount;
+		this->_energy_points--;
 	}
 }
