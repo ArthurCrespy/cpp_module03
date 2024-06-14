@@ -57,8 +57,8 @@ C++ Module 03 is a project of the 42 cursus. The program is divided into several
 
 ## You may also like...
 
-- [cpp_module04](https://github.com/ArthurCrespy/cpp_module02) - C++ Module 04
-- [cpp_module05](https://github.com/ArthurCrespy/cpp_module03) - C++ Module 05
+- [cpp_module04](https://github.com/ArthurCrespy/cpp_module04) - C++ Module 04
+- [cpp_module05](https://github.com/ArthurCrespy/cpp_module05) - C++ Module 05
 
 ## License
 
